@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="jquery-1.7.2.js" ></script>
+<!-- <script src="jquery.cookie.js"></script> -->
+<script>
+    
+    function setCookie(name,value,iDay){
+        if(iDay){
+            var oDate=new Date();
+            oDate.setDate(oDate.getDate()+iDay);
+            document.cookie=''+name+'='+value+';path=/;expires='+oDate;
+        }else{
+            document.cookie=''+name+'='+value+';path=/';
+        }
+    }
+    function getCookie(name){
+        var arr=document.cookie.split('; ');
+        for(var i=0;i<arr.length;i++){
+            var arr1=arr[i].split('=');
+            if(arr1[0]==name){
+                return arr1[1];
+            }
+        }
+        return '';
+    }
+    function removeCookie(name){
+        setCookie(name,'sdfsdf',-10);
+    }
+$(function(){
+
+    var oFest = document.getElementById('festival');
+    var oClose =document.getElementById('close');
+
+    var value = getCookie('cook');
+   
+    oClose.onclick =function(){
+        setCookie('cook','show',7);
+        oFest.style.display='none';
+    }
+
+    if(!value){
+        setCookie('cook','show',7);
+        oFest.style.display='block';
+    }
+    console.log(value)
+}) 
+</script>
+<title>无标题文档</title>
+</head>
+
+<body style="height: 10000px;">
+
+<!--10月24添加选货区弹出产品推送公告 -->
+<div  id="festival" style="display: none; width:100%; height:100%;">
+    <div id="zz" style=" position:fixed; top:0px;width:100%; height:100%; background:#000; overflow:hidden; opacity:0.4; z-index:100;"></div>
+    
+    <div id="gq-box" style=" z-index:101;width: 620px; height: 420px;background: url(http://tstatics.76sd.com/images/pc_dailishang/image/xhq-pop.png) center no-repeat;
+    						 position:fixed;margin:auto;left:0; right:0; top:80px; bottom:0;">
+         <div id="close" style="position:absolute;width:80px; height: 70px; top:15px; right:15px; cursor:pointer; "></div>
+         <div class="ljqg-pop" style="width:95px; height:35px; position:absolute; bottom:90px; right:140px;">
+        	<a href="">
+             <img src="http://tstatics.76sd.com/images/pc_dailishang/image/pop-go.png" />
+             </a>
+         </div>
+    </div>
+</div> 
+
+ <!--16 10月24 添加选货区弹出产品推送公告 -->
+
+
+
+</body>
+</html>

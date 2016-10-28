@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cookie设置测试</title>
+</head>
+<body>
+    <script>
+        setCookie("test", "test", 7);
+
+        function setCookie(name, value, iDay) {
+            if (iDay) {
+                var oDate = new Date();
+                oDate.setDate(oDate.getDate() + iDay);
+                document.cookie = '' + name + '=' + value + ';path=/;expires=' + oDate;
+            } else {
+                document.cookie = '' + name + '=' + value + ';path=/';
+            }
+        }
+    </script>
+</body>
+</html>

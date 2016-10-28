@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>window.scripts测试</title>
+
+    <script src="URLConfig.js?version=1.0&type=develop"></script>
+    <script src="../Scripts/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+    <script>
+        //debugger;
+        var scriptList = window.document.scripts;
+
+        console.info("该页面引用了" + scriptList.length + "个js文件！");
+
+        alert(window.CujuURLModel.communityURL);
+    </script>
+</body>
+</html>

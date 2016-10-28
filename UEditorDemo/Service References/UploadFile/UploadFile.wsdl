@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpLoadFiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDirectoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpLoadFilesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadAndBuildThum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDirectoryName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iHeight" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadAndBuildThumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpLoadAndBuildThumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadImages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDirectoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadImagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpLoadImagesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadAndBuildManyThum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDirectoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="widthHeight" type="tns:ArrayOfSizeModle" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSizeModle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SizeModle" nillable="true" type="tns:SizeModle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SizeModle">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpLoadAndBuildManyThumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpLoadAndBuildManyThumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadandBuildSub">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iHeight" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadandBuildSubResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpLoadandBuildSubResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filepath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filepaths" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteMoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteMoreResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileBytes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filepath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileBytesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileBytesResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShowImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PointX" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PointY" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CutWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CutHeight" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PicWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PicHeight" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolderName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShowImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShowImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDownFold" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownLoadFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpLoadFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpLoadFiles" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpLoadFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadAndBuildThumSoapIn">
+    <wsdl:part name="parameters" element="tns:UpLoadAndBuildThum" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadAndBuildThumSoapOut">
+    <wsdl:part name="parameters" element="tns:UpLoadAndBuildThumResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadImagesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpLoadImages" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadImagesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpLoadImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadAndBuildManyThumSoapIn">
+    <wsdl:part name="parameters" element="tns:UpLoadAndBuildManyThum" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadAndBuildManyThumSoapOut">
+    <wsdl:part name="parameters" element="tns:UpLoadAndBuildManyThumResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadandBuildSubSoapIn">
+    <wsdl:part name="parameters" element="tns:UpLoadandBuildSub" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadandBuildSubSoapOut">
+    <wsdl:part name="parameters" element="tns:UpLoadandBuildSubResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMoreSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMore" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMoreSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileBytesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileBytes" />
+  </wsdl:message>
+  <wsdl:message name="GetFileBytesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShowImageSoapIn">
+    <wsdl:part name="parameters" element="tns:ShowImage" />
+  </wsdl:message>
+  <wsdl:message name="ShowImageSoapOut">
+    <wsdl:part name="parameters" element="tns:ShowImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownLoadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownLoadFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UploadFileSoap">
+    <wsdl:operation name="UpLoadFiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">以二进制流上传文件</wsdl:documentation>
+      <wsdl:input message="tns:UpLoadFilesSoapIn" />
+      <wsdl:output message="tns:UpLoadFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadAndBuildThum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">以二进制流上传图片并生成一个缩略图，参数sMode分为：HW:指定高宽缩放（可能变形）W:指定宽，高按比例  H:指定高，宽按比例 Cut:指定高宽裁减（不变形）</wsdl:documentation>
+      <wsdl:input message="tns:UpLoadAndBuildThumSoapIn" />
+      <wsdl:output message="tns:UpLoadAndBuildThumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadImages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">以二进制流上传图片</wsdl:documentation>
+      <wsdl:input message="tns:UpLoadImagesSoapIn" />
+      <wsdl:output message="tns:UpLoadImagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadAndBuildManyThum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">以二进制流上传图片并生成多个缩略图，参数sMode分为：HW:指定高宽缩放（可能变形）W:指定宽，高按比例  H:指定高，宽按比例 Cut:指定高宽裁减（不变形）</wsdl:documentation>
+      <wsdl:input message="tns:UpLoadAndBuildManyThumSoapIn" />
+      <wsdl:output message="tns:UpLoadAndBuildManyThumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadandBuildSub">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据图片路径生成缩略图，参数sMode分为：HW:指定高宽缩放（可能变形）W:指定宽，高按比例  H:指定高，宽按比例 Cut:指定高宽裁减（不变形）</wsdl:documentation>
+      <wsdl:input message="tns:UpLoadandBuildSubSoapIn" />
+      <wsdl:output message="tns:UpLoadandBuildSubSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除相对路径的文件</wsdl:documentation>
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMore">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除多个附件[物理上的磁盘文件删除]</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMoreSoapIn" />
+      <wsdl:output message="tns:DeleteMoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileBytes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取文件的二进制流</wsdl:documentation>
+      <wsdl:input message="tns:GetFileBytesSoapIn" />
+      <wsdl:output message="tns:GetFileBytesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowImage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">截图</wsdl:documentation>
+      <wsdl:input message="tns:ShowImageSoapIn" />
+      <wsdl:output message="tns:ShowImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下载绝对路径图片到指定文件夹里</wsdl:documentation>
+      <wsdl:input message="tns:DownLoadFileSoapIn" />
+      <wsdl:output message="tns:DownLoadFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UploadFileSoap" type="tns:UploadFileSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpLoadFiles">
+      <soap:operation soapAction="http://tempuri.org/UpLoadFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadAndBuildThum">
+      <soap:operation soapAction="http://tempuri.org/UpLoadAndBuildThum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadImages">
+      <soap:operation soapAction="http://tempuri.org/UpLoadImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadAndBuildManyThum">
+      <soap:operation soapAction="http://tempuri.org/UpLoadAndBuildManyThum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadandBuildSub">
+      <soap:operation soapAction="http://tempuri.org/UpLoadandBuildSub" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMore">
+      <soap:operation soapAction="http://tempuri.org/DeleteMore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileBytes">
+      <soap:operation soapAction="http://tempuri.org/GetFileBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowImage">
+      <soap:operation soapAction="http://tempuri.org/ShowImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <soap:operation soapAction="http://tempuri.org/DownLoadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UploadFileSoap12" type="tns:UploadFileSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpLoadFiles">
+      <soap12:operation soapAction="http://tempuri.org/UpLoadFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadAndBuildThum">
+      <soap12:operation soapAction="http://tempuri.org/UpLoadAndBuildThum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadImages">
+      <soap12:operation soapAction="http://tempuri.org/UpLoadImages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadAndBuildManyThum">
+      <soap12:operation soapAction="http://tempuri.org/UpLoadAndBuildManyThum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadandBuildSub">
+      <soap12:operation soapAction="http://tempuri.org/UpLoadandBuildSub" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMore">
+      <soap12:operation soapAction="http://tempuri.org/DeleteMore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileBytes">
+      <soap12:operation soapAction="http://tempuri.org/GetFileBytes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowImage">
+      <soap12:operation soapAction="http://tempuri.org/ShowImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <soap12:operation soapAction="http://tempuri.org/DownLoadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UploadFile">
+    <wsdl:port name="UploadFileSoap" binding="tns:UploadFileSoap">
+      <soap:address location="http://localhost:15156/fm_upload_ws/UploadFile.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UploadFileSoap12" binding="tns:UploadFileSoap12">
+      <soap12:address location="http://localhost:15156/fm_upload_ws/UploadFile.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
