@@ -67,3 +67,14 @@ public class Test
 21|22
 
 ### SHA引用
+5e0b770018f87bd7fafecb7b3920cda8a30d4740
+### Issue引用
+#1
+### 圈人
+@venux
+### 自动识别网址
+http://www.cnblogs.com
+### 删除线
+~~删除~~
+### Emoji
+:+1:
